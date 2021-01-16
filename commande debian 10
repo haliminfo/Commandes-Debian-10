@@ -2,7 +2,7 @@
 
 ### Ajouter les dépots suivants dans /etc/apt/source.list
 
-cp /etc/apt/sources.list /etc/apt/soyrces.list.backup
+cp /etc/apt/sources.list /etc/apt/sources.list.backup
 
 echo > /etc/apt/sources.list
 
