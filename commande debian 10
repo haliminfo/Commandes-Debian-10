@@ -37,7 +37,7 @@ curl --silent --location https://deb.nodesource.com/setup_10.x | bash -
 
 apt-get update
 
-apt-get install -y build-essential dos2unix gcc git libmcrypt4 libpcre3-dev ntp unzip \
+apt-get install -y build-essential dos2unix gcc git libmcrypt4 libpcre3-dev ntp unzip wget \
 make python2.7-dev python-pip re2c supervisor unattended-upgrades whois vim libnotify-bin \
 pv cifs-utils mcrypt bash-completion zsh
 
@@ -130,9 +130,9 @@ echo "Composer Ok"
 echo "Merci de changer le mdp root Mysql du script"
 apt-get install -y debconf-utils
 export DEBIAN_FRONTEND="noninteractive"
-debconf-set-selections <<< "mysql-server mysql-server/root_password password 757hUi7XbiQN"
-debconf-set-selections <<< "mysql-server mysql-server/root_password_again password 757hUi7XbiQN"
-apt-key adv --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys 8C718D3B5072E1F5
+debconf-set-selections <<< "mysql-server mysql-server/root_password password timm_01"
+debconf-set-selections <<< "mysql-server mysql-server/root_password_again password timm_01"
+apt-key adv --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys 8C718D3B5072E1F5 
 apt-get update
 apt-get -y install mysql-server
 echo "Merci d'exécuter la commande #mysql_secure_installation afin de modifier le mdp root de votre installation"
@@ -192,6 +192,7 @@ server {
         fastcgi_param SCRIPT_FILENAME /usr/share/phpmyadmin$fastcgi_script_name;
         fastcgi_param  HTTPS off;
     }
+
 }
 
 echo "Vhost pma OK"
