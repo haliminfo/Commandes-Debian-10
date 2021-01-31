@@ -229,8 +229,20 @@ echo "Configuration UFW"
 
 
 
+echo "INstallation ElasticSearch 6.3.2"
 
+cd /tmp
+apt-get update
+apt install default-jdk
 
+wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.3.2.deb
+dpkg -i elasticsearch-6.3.2.deb
+
+systemctl enable elasticsearch.service
+systemctl start elasticsearch.service
+
+#en cas de soucis de démarrage d elastic 
+#voir https://stackoverflow.com/questions/59022775/elasticsearch-5-x-fails-to-start
 
 
 
